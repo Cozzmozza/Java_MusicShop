@@ -1,9 +1,11 @@
 package shopTests;
 
 import behaviours.ISell;
+import instruments.BongoDrums;
 import instruments.Guitar;
 import org.junit.Before;
 import org.junit.Test;
+import shop.Book;
 import shop.DrumSticks;
 import shop.Shop;
 
@@ -15,6 +17,8 @@ public class ShopTest {
 
     private Shop shop;
     private Guitar guitar;
+    private BongoDrums bongoDrums;
+    private Book book;
     private DrumSticks drumSticks;
     private ArrayList<ISell> testArray;
 
@@ -70,4 +74,12 @@ public class ShopTest {
         assertEquals(1, shop.getTotalStockCount());
 
     }
+
+    @Test
+    public void canClearStock(){
+        shop.clearStock();
+        assertEquals(testArray, shop.getStock());
+        assertEquals(0, shop.getTotalStockCount());
+    }
+
 }

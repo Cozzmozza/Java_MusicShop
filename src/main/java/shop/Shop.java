@@ -28,4 +28,8 @@ public class Shop {
             stock.remove(item);
         }
     }
+
+    public void clearStock() {
+        stock.clear();
+    }
 }
