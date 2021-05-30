@@ -82,4 +82,12 @@ public class ShopTest {
         assertEquals(0, shop.getTotalStockCount());
     }
 
+    @Test
+    public void canCalculateTotalPotentialMarkup(){
+        shop.addItemToStock(guitar);
+        shop.addItemToStock(drumSticks);
+        assertEquals(165.54, shop.getTotalMarkup(), 0.005);
+    }
+
+
 }

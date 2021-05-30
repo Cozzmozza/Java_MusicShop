@@ -32,4 +32,12 @@ public class Shop {
     public void clearStock() {
         stock.clear();
     }
+
+    public double getTotalMarkup() {
+        double total = 0;
+        for (ISell item : stock){
+            total += item.calculateMarkup();
+        }
+        return total;
+    }
 }
